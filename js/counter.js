@@ -31,7 +31,6 @@ export class Counter {
         //add event listener to button
         this.button.addEventListener('click', () => this.increment());
         this.decrementButton.addEventListener('click', () => this.decrement());
-        this.decrementButton.addEventListener('click', () => this.reset());
         this.resetButton.addEventListener('click', () => this.reset());
     }
 
