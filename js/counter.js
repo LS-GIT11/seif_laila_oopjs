@@ -31,8 +31,8 @@ export class Counter {
         //add event listener to button
         this.button.addEventListener('click', () => this.increment());
         this.decrementButton.addEventListener('click', () => this.decrement());
+        this.decrementButton.addEventListener('click', () => this.reset());
         this.resetButton.addEventListener('click', () => this.reset());
-        
     }
 
     //state update method
@@ -52,11 +52,15 @@ export class Counter {
     reset() {
         this.count = 0;
         this.update();
+        console.log('Reset Activated!!!');
     }
 
     update() {
         this.display.textContent = `count ${this.count}`;
         //classList.toggle() this.count===0
+
+        this.decrementButton.classList.toggle('inactive', this.count === 0);
+        this.resetButton.classList.toggle('inactive', this.count === 0);
     }
     
 }
